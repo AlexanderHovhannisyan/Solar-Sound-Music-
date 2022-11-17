@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builderz Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="preHeader" id="preHeader">
+        <h1>Builderz</h1>
+        <div class="preHeader-info">
+            <div class="preHeader-infoItem">
+                <img class="preHeader-calendar preHeader-items" src="img/organizer.png">
+                <div>
+                    <h3>Opening Hour</h3>
+                    <p>Mon - Fri, 8:00 - 9:00</p>
+                </div>
+            </div>
+            <div class="preHeader-infoItem">
+                <img class="preHeader-mobile preHeader-items" src="img/call.png">
+                <div>
+                    <h3>Call Us</h3>
+                    <p>+012 345 6789
+                    </p>
+                </div>
+            </div>
+            <div class="preHeader-infoItem ">
+                <img class="preHeader-mail preHeader-items" src="img/outbox.png">
+                <div>
+                    <h3>Email Us</h3>
+                    <p>info@example.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <ul class="navbar" id="navbarHeader">
+            <li><a href="#preHeader" class="navLinks" data-scroll="home">Home</a></li>
+            <li><a href="#about" class="navLinks"  data-scroll="about">About</a></li>
+            <li><a href="#services" class="navLinks"  data-scroll="services">Services</a></li>
+            <li><a href="#team" class="navLinks"  data-scroll="team">Team</a></li>
+            <li><a href="#footerContainer" class="navLinks"  data-scroll="footer hideShow">Contact</a></li>
+        </ul>
+        <button>
+            Get A Quote
+        </button>
+
+        <span class="burgerMenu-text">MENU</span>
+
+        <label class="burgerMenu" id="burgerParent">
+           <span class="burgerMenu-content"></span>
+           <span class="burgerMenu-content"></span>
+           <span class="burgerMenu-content"></span>
+        </label>
+    </header>
+    <section class="home" id="home">
+        <div class="homeContent">
+            <div class="homeContent-slider">
+                <div class="homeContent-sliderItem">
+                    <img src="img/carousel-1.jpg" alt="">
+                    <div>
+                        <h2>We Are Professional</h2>
+                        <h1>For Your Dream Project</h1>
+                        <a href="#">
+                            Get A Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="homeContent-sliderItem ">
+                    <img src="img/carousel-2.jpg" alt="">
+                    <div>
+                        <h2>Professional Builder</h2>
+                        <h1>We Build Your Home</h1>
+                        <a href="#">
+                            Get A Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="homeContent-sliderItem">
+                    <img src="img/carousel-3.jpg" alt="">
+
+                    <div>
+                        <h2>We Are Trusted</h2>
+                        <h1>For Your Dream Home</h1>
+                        <a href="#">
+                            Get A Quote
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <button id="leftButton">🢐</button>
+            <button id="rightButton">🢒</button>
+            <div class="homeContent-checkboxes">
+                <input type="radio" name="slider" checked>
+                <input type="radio" name="slider">
+                <input type="radio" name="slider">
+            </div>
+        </div>
+    </section>
+    <div class="action" id="action">
+        <div class="action-item" style="--i:0">
+            <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+            <div>
+                <h3>Expert Worker</h3>
+                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+            </div>
+        </div>
+        <div class="action-item" style="--i:1">
+            <span><i class="fa fa-building-o" aria-hidden="true"></i></span>
+            <div>
+                <h3>Quality Work</h3>
+                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+            </div>
+        </div>
+        <div class="action-item" style="--i:2">
+            <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+            <div>
+                <h3>24/7 Support</h3>
+                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <img src="img/about.jpg" class="about-img">
+        <div class="about-content">
+            <h4 class="subtitle">Welcome to Builderz</h4>
+            <h2 class="title">25 Years Experience</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra
+                quis sem. <br>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra
+                quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor.
+                Aliquam interdum at lacus non blandit.
+            </p>
+            <button>
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="resultsContainers blueLoc">
+            <div class="resultsItems ">
+                <div class="result-img" style="background: url(img/builder.png)">
+                </div>
+                <div>
+                    <h3 class="resultCount" data-toggle="109">0</h3>
+                    <p>Expert Workers</p>
+                </div>
+            </div>
+            <div class="resultsItems ">
+                <div class="result-img" style="background: url(img/rating.png)"></div>
+                <div>
+                    <h3 class="resultCount" data-toggle="485">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+        <div class="resultsContainers yellowLoc">
+            <div class="resultsItems ">
+                <div class="result-img" style="background: url(img/success.png)"></div>
+                <div>
+                    <h3 class="resultCount" data-toggle="789">0</h3>
+                    <p>Completed Projects</p>
+                </div>
+            </div>
+            <div class="resultsItems">
+                <div class="result-img" style="background: url(img/control-system.png)"></div>
+                <div>
+                    <h3 class="resultCount" data-toggle="890">0</h3>
+                    <p>Running Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h4 class="subtitle">Our Services</h4>
+        <h2 class="title">We Provide Services</h2>
+        <div class="services-container">
+            <div class="servicesItems upperContainer" style="--i:0">
+                <div>
+                    <img src="img/service-0.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>Building Construction</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+            </div>
+            <div class="servicesItems upperContainer" style="--i:1">
+                <div>
+                    <img src="img/service-1.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>House Renovation</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+            </div>
+            <div class="servicesItems upperContainer" style="--i:2">
+                <div>
+                    <img src="img/service-2.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>Architecture Design</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+
+            </div>
+            <div class="servicesItems lowerContainer" style="--i:0">
+                <div>
+                    <img src="img/service-3.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>Interior Design</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+            </div>
+            <div class="servicesItems lowerContainer" style="--i:1">
+                <div>
+                    <img src="img/service-4.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>Fixing & Support</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+            </div>
+            <div class="servicesItems lowerContainer" style="--i:2">
+                <div>
+                    <img src="img/service-5.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                        facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                        viverra quis sem.</p>
+                </div>
+                <div><span>Painting</span><button class="servicesOpen"><i class="fa fa-picture-o"
+                            aria-hidden="true"></i></button></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="video">
+        <div class="video-button"><i class="fa fa-play" aria-hidden="true"></i></div>
+        <div class="videoEffect"></div>
+    </div>
+
+    <section class="team" id="team">
+        <h4 class="subtitle">Our team</h4>
+        <h2 class="title">Meet Our Enginner</h2>
+        <div class="team-container">
+            <div class="teamItem" style="--i:0">
+                <i class="fa fa-twitter" style="--i:0" aria-hidden="true"></i>
+                <i class="fa fa-facebook" style="--i:1" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" style="--i:2" aria-hidden="true"></i>
+                <i class="fa fa-instagram" style="--i:3" aria-hidden="true"></i>
+                <img src="img/team-1.jpg" >
+                <div>
+                    <h4>Adam Phillips</h4>
+                    <h5>CEO & Founder</h5>
+                </div>
+            </div>
+            <div class="teamItem" style="--i:1">
+                <i class="fa fa-twitter"style="--i:0" aria-hidden="true"></i>
+                <i class="fa fa-facebook" style="--i:1" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" style="--i:2" aria-hidden="true"></i>
+                <i class="fa fa-instagram" style="--i:3" aria-hidden="true"></i>
+                <img src="img/team-2.jpg" alt="">
+                <div>
+                    <h4>Dylan Addams</h4>
+                    <h5>Civil Enginner</h5>
+                </div>
+            </div>
+             <div class="teamItem" style="--i:2">
+                <i class="fa fa-twitter" style="--i:0" aria-hidden="true"></i>
+                <i class="fa fa-facebook" style="--i:1" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" style="--i:2" aria-hidden="true"></i>
+                <i class="fa fa-instagram" style="--i:3" aria-hidden="true"></i>
+                <img src="img/team-3.jpg" alt="">
+                <div>
+                    <h4>Jhon Doe</h4>
+                    <h5>Interior Designer</h5>
+                </div>
+            </div>
+            <div class="teamItem" style="--i:3">
+                <i class="fa fa-twitter" style="--i:0" aria-hidden="true"></i>
+                <i class="fa fa-facebook" style="--i:1" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" style="--i:2" aria-hidden="true"></i>
+                <i class="fa fa-instagram" style="--i:3" aria-hidden="true"></i>
+                <img src="img/team-4.jpg" alt="">
+                <div>
+                    <h4>Josh Dunn</h4>
+                    <h5>Interior Designer</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer" id="footerContainer">
+        <div class="footer-content">
+                <div class="footerContent-items">
+                    <h3>Office Contact</h3>
+                    <span>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>123 Street, New York, USA</p>
+                    </span>
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>+012 345 67890</p>
+                    </span>
+                    <span>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <p>info@example.com</p>
+                    </span>
+                    <div class="footerContent-icons">
+                        <i class="fa fa-twitter" style="--i:0" aria-hidden="true"></i>
+                        <i class="fa fa-facebook" style="--i:1" aria-hidden="true"></i>
+                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" style="--i:3" aria-hidden="true"></i>
+                        <i class="fa fa-linkedin" style="--i:2" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="footerContent-items">
+                    <h3>Services Areas</h3>
+                    <a href="#" style="--i:1">Building Construction</a>
+                    <a href="#" style="--i:2">House Renovation</a>
+                    <a href="#" style="--i:3">Architecture Design</a>
+                    <a href="#" style="--i:4">Interior Design</a>
+                    <a href="#" style="--i:5">Painting</a>
+                </div>
+
+                <div class="footerContent-items">
+                    <h3>Useful Pages</h3>
+                    <a href="#" style="--i:1">About Us</a>
+                    <a href="#" style="--i:2">Contact Us</a>
+                    <a href="#" style="--i:3">Our Team</a>
+                    <a href="#" style="--i:4">Projects</a>
+                    <a href="#" style="--i:5">Testimonial</a>
+                </div>
+
+                <div class="footerContent-items">
+                    <h3>Newsletter</h3>
+                    <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
+                    <span>
+                        <input type="text" placeholder="Email here"> 
+                        <button>Submit</button>
+                    </span>
+            </div>
+        </div>
+        <div class="footer-terms">
+            <a href="">Terms of use</a>
+            <a href="">Privacy policy</a>
+            <a href="">Cookies</a>
+            <a href="">Help</a>
+            <a href="">FQAs</a>
+        </div>
+        <div class="footer-bottom">
+            <h5>©<a href="#">Builderz</a>, All Right Reserved.</h5>
+            <h5 class="author-name">By Alex Hovhannisyan</h5>
+        </div>
+
+    </section>
+
+    <button id="onTop">^</button>
+    <div id="servicesGallery">
+        <div class="servicesGallery-content">
+            <button id="galleryShut"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button id="galleryLeft">🢐</button>
+            <button id="galleryRight">🢒</button>
+        </div>
+    </div>
+    <div id="videoContent">
+       <video id="videoBlock" src="video/video1.mp4" controls ></video>
+        <button id="videoShut"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
