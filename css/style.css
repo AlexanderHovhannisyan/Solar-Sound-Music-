@@ -1420,7 +1420,7 @@ header > a:hover {
     
   }
 
-  header a {
+  header > a {
     display: none;
   }
 
@@ -1821,7 +1821,7 @@ header > a:hover {
     
   }
 
-  header a {
+  header > a {
     display: none;
   }
 
