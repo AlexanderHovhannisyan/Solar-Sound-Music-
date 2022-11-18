@@ -314,11 +314,16 @@ header > a:hover {
   visibility: hidden;
   animation: rightText 0.8s linear 1 forwards;
   animation-delay: 0.2s;
+
 }
 
 @keyframes rightText {
   0% {
     transform: translateX(400px);
+    -webkit-transform: translate(400px);
+    -moz-transform: translate(400px);
+    -ms-transform: translate(400px);
+    -o-transform: translate(400px);
     opacity: 0;
     visibility: hidden;
   }
@@ -340,6 +345,10 @@ header > a:hover {
 @keyframes leftText {
   0% {
     transform: translateX(-400px);
+    -webkit-transform: translate(-400px);
+    -moz-transform: translate(-400px);
+    -ms-transform: translate(-400px);
+    -o-transform: translate(-400px);
     opacity: 0;
     visibility: hidden;
   }
@@ -361,12 +370,20 @@ header > a:hover {
 @keyframes buttonAnim {
   0% {
     transform: translateY(80px);
+    -webkit-transform: translateY(80px);
+    -moz-transform: translateY(80px);
+    -ms-transform: translateY(80px);
+    -o-transform: translateY(80px);
     opacity: 0;
     visibility: hidden;
   }
 
   100% {
     transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
     opacity: 1;
     visibility: visible;
   }
@@ -578,10 +595,18 @@ header > a:hover {
     opacity: 0;
     visibility: hidden;
     transform: translateY(500px);
+    -webkit-transform: translateY(500px);
+    -moz-transform: translateY(500px);
+    -ms-transform: translateY(500px);
+    -o-transform: translateY(500px);
   }
 
   100% {
     transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
     opacity: 1;
     visibility: visible;
   }
@@ -682,25 +707,45 @@ header > a:hover {
 .resultRightContainer {
   animation: resultRightContainer 1s linear 1 forwards 0.5s;
   transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
 }
 
 @keyframes resultLeftContainer {
   0% {
     transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
   }
 
   100% {
-    transform: translate(0px);
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
   }
 }
 
 @keyframes resultRightContainer {
   0% {
     transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
   }
 
   100% {
     transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
   }
 }
 
