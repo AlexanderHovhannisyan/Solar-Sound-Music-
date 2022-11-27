@@ -24,15 +24,12 @@ let serviceLowerItems = document.querySelectorAll('.lowerContainer')
 let servicesItems = document.querySelectorAll('.servicesItems')
 let videoContainer = document.querySelector('.video')
 let teamItems = document.querySelectorAll('.teamItem')
-
 // Left Position Count For Slide
 let leftOffset = 0
-// Count for Slide
+// Counts
 let count = 0
-// Count for Interval
 let intCount = 0
 // Count and Created Text for Gallery
-let imgCount = 0
 let serviceGalleryText = document.createElement('span')
 serviceGalleryText.className = 'textGallery'
 // Slider Length
@@ -41,7 +38,7 @@ let sliderLength = (sliderContainer.children.length - 1) * 100
 // .... ФУНКЦИИ ..... ///////////////////////////////////////////////////////////////////////////////////////
 
 function changeLink(parent) {
-    if(document.body.clientWidth > 991){
+    if (document.body.clientWidth > 991) {
         bodyElements.forEach(el => {
             if (parent.className.includes(el.className)) {
                 linksHeader.forEach(link => {
@@ -55,7 +52,7 @@ function changeLink(parent) {
             }
         })
     }
-    else{
+    else {
         return false
     }
 }
@@ -65,6 +62,7 @@ function radioChecked(c) {
         c == index ? item.checked = true : item.checked = false
     })
 }
+
 function sliderContentAnim(c) {
     sliderItems.forEach((item, index) => {
         if (index === c) {
@@ -72,9 +70,9 @@ function sliderContentAnim(c) {
             item.children[1].children[1].classList.add('leftTextAnim')
             item.children[1].children[2].classList.add('buttonAnim')
             setTimeout(() => {
-                item.children[1].children[0].classList.remove('rightTextAnim')
-                item.children[1].children[1].classList.remove('leftTextAnim')
-                item.children[1].children[2].classList.remove('buttonAnim')
+                for(let i = 0; i < item.children[1].children.length; i++){
+                    item.children[1].children[i].className = ''
+                }
             }, 1000)
         }
     })
@@ -99,13 +97,13 @@ function sliderTime() {
         sliderTime()
     }, 5000)
 
-    leftButton.onclick = () => {
+    function buttonSlider(term, change, action, stateCount, stateOffset) {
         clearTimeout(sliderCount)
-        leftOffset -= 100;
-        count--;
-        if (count < 0) {
-            count = sliderLength / 100
-            leftOffset = sliderLength
+        action;
+        change;
+        if (term) {
+            count = stateCount
+            leftOffset = stateOffset
         }
         sliderContainer.style.left = `${-leftOffset}vw`;
         radioChecked(count)
@@ -115,21 +113,14 @@ function sliderTime() {
         }, 100)
     }
 
-    rightButton.onclick = () => {
-        clearTimeout(sliderCount)
-        leftOffset += 100;
-        count++;
-        if (count > sliderLength / 100) {
-            count = 0
-            leftOffset = 0
-        }
-        sliderContainer.style.left = `${-leftOffset}vw`;
-        radioChecked(count)
-        sliderContentAnim(count)
-        setTimeout(() => {
-            sliderTime()
-        }, 100)
+    leftButton.onclick = () => {
+        buttonSlider(count <= 0, count--, leftOffset -= 100, sliderLength / 100, sliderLength)
     }
+
+    rightButton.onclick = () => {
+        buttonSlider(count >= sliderLength / 100, count++, leftOffset += 100, 0, 0)
+    }
+
 }
 
 function resultInterval(el, step) {
@@ -143,31 +134,18 @@ function resultInterval(el, step) {
     }, 55 / (el.dataset.toggle / 109))
 }
 
-function addScrollAnim(elem, payman, anim) {
+function addScrollAnim(elem, term, anim) {
     const y = window.scrollY
-    if (y > payman) {
+    if (y > term) {
         elem.classList.add(anim)
         changeLink(elem)
     }
-    else{
+    else {
         return false
     }
 }
 
 // .... ИВЕНТЫ ..... ///////////////////////////////////////////////////////////////////////////////////////
-videoContainer.children[0].onclick = () => {
-    videoContent.style.display = 'flex'
-    videoContent.children[0].play()
-    document.body.style.overflowY = 'hidden'
-    videoBlock.onclick = () => videoBlock.paused ?  videoBlock.pause() : videoBlock.play()
-    }
-    effVid.onclick = () =>{
-        videoContent.style.display = 'none'
-        document.body.style.overflowY = 'unset'
-        videoBlock.pause()
-        videoBlock.currentTime = 0
-    }
-
 burgerParent.onclick = () => {
     burgerItems.forEach(it => {
         it.classList.toggle('burgerMenu-active')
@@ -175,36 +153,53 @@ burgerParent.onclick = () => {
     })
 }
 
+videoContainer.children[0].onclick = () => {
+    videoContent.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'
+    document.body.style.overflowY = 'hidden'
+    videoBlock.play()
+    videoBlock.onclick = () => videoBlock.paused ? videoBlock.pause() : videoBlock.play()
+}
+
+effVid.onclick = () => {
+    videoContent.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)'
+    document.body.style.overflowY = 'visible'
+    videoBlock.pause()
+    videoBlock.currentTime = 0
+}
+
 servicesItems.forEach((item, index, arr) => {
+    let imgCount = 0
     servicesGallery.children[0].appendChild(serviceGalleryText)
     item.onclick = () => {
-        servicesGallery.style.display = 'flex'
+        servicesGallery.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'
         document.body.style.overflowY = 'hidden'
         imgCount = index
         let galleryItemStyle = servicesGallery.children[0].style
         galleryItemStyle.background = `url(img/service-${imgCount}.jpg)`
         serviceGalleryText.innerHTML = `Image ${index + 1} of ${arr.length}`
+
         galleryLeft.onclick = () => {
-            imgCount <= 0 ?  galleryItemStyle.background = `url(img/service-${imgCount = 5}.jpg)` :  galleryItemStyle.background = `url(img/service-${imgCount -= 1}.jpg)`
+            imgCount <= 0 ? galleryItemStyle.background = `url(img/service-${imgCount = 5}.jpg)` : galleryItemStyle.background = `url(img/service-${imgCount -= 1}.jpg)`
             serviceGalleryText.innerHTML = `Image ${imgCount + 1} of ${arr.length}`
         }
         galleryRight.onclick = () => {
-            imgCount >= 5 ? galleryItemStyle.background = `url(img/service-${imgCount = 0}.jpg)`: galleryItemStyle.background = `url(img/service-${imgCount += 1}.jpg)`
+            imgCount >= 5 ? galleryItemStyle.background = `url(img/service-${imgCount = 0}.jpg)` : galleryItemStyle.background = `url(img/service-${imgCount += 1}.jpg)`
             serviceGalleryText.innerHTML = `Image ${imgCount + 1} of ${arr.length}`
         }
     }
-    effGal.onclick = () =>{
-        servicesGallery.style.display = 'none'
-        document.body.style.overflowY = 'visible'
-    }
 })
+
+effGal.onclick = () => {
+    servicesGallery.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)'
+    document.body.style.overflowY = 'visible'
+}
 
 window.addEventListener('scroll', () => {
     const y = window.scrollY
     y > preHeader.clientHeight ? header.setAttribute('style', 'width:100%; box-shadow: 0 5px 5px rgba(0,0,0,0.3);') : header.setAttribute('style', `width: ${document.body.clientWidth < 991 ? '100%' : '90%'}; box-shadow: none;`)
-    y > about.offsetTop - about.clientHeight - header.clientHeight ? onTop.classList.add('hideShow') : onTop.classList.remove('hideShow') 
+    y > about.offsetTop - about.clientHeight - header.clientHeight ? onTop.classList.add('hideShow') : onTop.classList.remove('hideShow')
     addScrollAnim(homeContent, -1, 'home')
-    aboutItems.forEach(item => addScrollAnim(item, about.offsetTop - about.clientHeight, 'animation1' ))
+    aboutItems.forEach(item => addScrollAnim(item, about.offsetTop - about.clientHeight, 'animation1'))
     serviceUpperItems.forEach(item => addScrollAnim(item, services.offsetTop - item.clientHeight, 'animation1'))
     serviceLowerItems.forEach(item => addScrollAnim(item, services.offsetTop + header.clientHeight, 'animation1'))
     teamItems.forEach(item => addScrollAnim(item, item.parentElement.offsetTop - item.parentElement.clientHeight - (header.clientHeight * 2), 'animation1'))

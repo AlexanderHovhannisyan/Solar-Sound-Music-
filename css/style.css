@@ -35,6 +35,7 @@ body {
   transition: 0.5s;
 }
 
+
 /*  ------- PREHEADER ---------- */
 
 #onTop {
@@ -261,6 +262,8 @@ header > a:hover {
   width: 100%;
   position: relative;
   overflow: hidden;
+  user-select: none;
+
 }
 
 .homeContent {
@@ -677,6 +680,7 @@ header > a:hover {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  user-select: none;
 }
 
 .result-img {
@@ -784,6 +788,7 @@ header > a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  user-select: none;
 }
 
 .services-container {
@@ -871,11 +876,13 @@ header > a:hover {
   left: 0;
   z-index: 100000;
   background: rgba(0, 0, 0, 0.706);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   transition: 0.5s;
+  user-select: none;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 .servicesGallery-content {
@@ -1049,6 +1056,7 @@ header > a:hover {
   flex-direction: column;
   padding: 100px 120px;
   overflow: hidden;
+  user-select: none;
 }
 
 .team-container {
@@ -1418,6 +1426,7 @@ header > a:hover {
     width: 100%;
     height: 70px;
     justify-content: flex-end;
+    user-select: none;
   }
 
   header::before {
@@ -1566,6 +1575,7 @@ header > a:hover {
 
 .about > img {
   width: 90%;
+  user-select: none;
 }
 
 .about-content {
